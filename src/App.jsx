@@ -4,34 +4,54 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import axios from 'axios';
 
-
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <header className='header'>
+        <Header />
+      </header>
+
+      <div className='body'>
+        <Currency />
+        <Currency />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+
     </>
   )
+}
+
+// header
+function Header() {
+  return (
+    <>
+      <div>Currency</div>
+      <div>converter</div>
+    </>
+
+
+  )
+}
+// inputs & text areas
+
+function Currency() {
+  return (
+    <div>
+      <input type="number" />
+      <input list="currencies" />
+      <datalist id='currencies'>
+        <option value="">IDR</option>
+        <option value="">EUR</option>
+        <option value="">CAD</option>
+        <option value="">USD</option>
+        <option value="">AUD</option>
+      </datalist>
+
+    </div>
+  )
+
 }
 
 export default App
