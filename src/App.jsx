@@ -8,18 +8,19 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div style={{ background: "##fce9f4" }}>
       <header className='header'>
         <Header />
       </header>
 
       <div className='body'>
+        <div style={{ color: "#841522" }}><h1>Convert</h1> </div>
         <Currency />
         <Currency />
       </div>
 
 
-    </>
+    </div>
   )
 }
 
@@ -27,8 +28,8 @@ function App() {
 function Header() {
   return (
     <>
-      <div>Currency</div>
-      <div>converter</div>
+      <div><h1>Currency</h1> </div>
+      <div><h1>converter</h1></div>
     </>
 
 
@@ -38,7 +39,7 @@ function Header() {
 
 function Currency() {
   return (
-    <div>
+    <div className='dataInput'>
       <input type="number" />
       <input list="currencies" />
       <datalist id='currencies'>
